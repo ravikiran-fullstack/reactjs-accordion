@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import useStyles from "./appStyles";
 
-function App() {
+import Qnas from "./components/qnas/Qnas";
+
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+
+const App = () => {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Grid
+        container
+        alignItems="center"
+        justify="center"
+        style={{ marginTop: "100px" }}
+      >
+        <Grid item>
+          <Paper className={classes.paper} elevation={3}>
+            <Grid container style={{ padding: "50px" }} spacing={2}>
+              <Grid item xs={3}>
+                <Typography variant="h5">
+                  Questions and Answers About Login
+                </Typography>
+              </Grid>
+              <Grid item xs={9}>
+                <Qnas></Qnas>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Grid>
+      </Grid>
+    </>
   );
-}
+};
 
 export default App;
