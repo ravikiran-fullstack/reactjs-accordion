@@ -26,9 +26,7 @@ const Qna = (props) => {
           )}
         </span>
       </div>
-      <div>
-        <p>{props.info}</p>
-      </div>
+      <div>{!isOpen && <p>{props.info}</p>}</div>
     </div>
   );
 };
